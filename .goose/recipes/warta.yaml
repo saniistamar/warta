@@ -1,0 +1,30 @@
+version: "0.1.0"
+title: warta
+description: >-
+  Guided editorial workflow for a news story. Expands a topic into a
+  landscape of candidate stories, helps you pick one, collects and
+  verifies web evidence, picks an angle, and ends with a story brief a
+  writer or drafting agent can pick up. One sitting, about 2-3 hours.
+instructions: |
+  Run the warta skill. It carries the full method: five stages
+  (landscape, story pick, evidence, angle pick, materialization), stage
+  gates, artifact templates, and the resume rule. Do not improvise
+  stages outside the skill.
+  Launch parameters: topic = "{{topic}}" (empty means the skill asks);
+  medium = "{{medium}}" (empty means the skill asks at materialization).
+parameters:
+  - key: topic
+    input_type: string
+
+    description: >-
+      What to talk about, e.g. "jakarta sinking city". Optional. The
+      workflow asks for it if unset.
+    requirement: optional
+    default: ""
+  - key: medium
+    input_type: string
+    description: >-
+      The medium for the final artifact: text, audio, or visual/video.
+      Optional. The workflow asks at materialization if unset.
+    requirement: optional
+    default: ""

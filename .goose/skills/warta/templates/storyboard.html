@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storyboard</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 2rem;
+    font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  header { margin-bottom: 1.5rem; }
+  h1 { font-size: 1.5rem; margin: 0 0 .25rem; }
+  .medium { color: dimgray; font-size: .9rem; }
+  .error {
+    display: none; margin: 2rem 0; padding: 1rem 1.25rem;
+    border: 2px solid #b3261e; border-radius: 6px; background: #fce8e6;
+    color: #b3261e; font-weight: 600;
+  }
+  table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+  th, td { border: 1px solid #999; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+  th { background: #eee; font-size: .85rem; }
+  td.shot, td.beat { text-align: center; font-weight: 700; white-space: nowrap; }
+  .beat-row { display: flex; gap: 1rem; margin: .75rem 0; }
+  .beat-num {
+    flex: 0 0 2.2rem; height: 2.2rem; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: #333; color: #fff; font-weight: 700;
+  }
+  .beat-body { flex: 1; }
+  .beat-name { font-weight: 700; margin: 0 0 .15rem; }
+  .beat-intent { margin: 0; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title">Storyboard</h1>
+  <p class="medium" id="medium"></p>
+</header>
+<div class="error" id="error" role="alert"></div>
+<main id="content"></main>
+
+<script type="application/json" id="storyboard-data">
+null
+</script>
+
+<script>
+"use strict";
+(function () {
+  var REQUIRED = {
+    shotgrid: ["shot_no", "scene", "shot_size", "angle", "movement", "description", "audio_note"],
+    beatsheet: ["beat", "name", "intent"]
+  };
+
+  function fail(message) {
+    var box = document.getElementById("error");
+    document.getElementById("content").textContent = "";
+    document.getElementById("title").textContent = "Storyboard — not renderable";
+    box.textContent = "Storyboard data error: " + message;
+    box.style.display = "block";
+  }
+
+  var island = document.getElementById("storyboard-data");
+  if (!island) { fail("no storyboard-data island found in this file."); return; }
+
+  var data;
+  try {
+    data = JSON.parse(island.textContent);
+  } catch (e) {
+    fail("the storyboard-data island is not valid JSON (" + e.message + ").");
+    return;
+  }
+
+  if (data === null || typeof data !== "object" || Array.isArray(data)) {
+    fail("the storyboard-data island is not filled. The agent fills it from board.md — view, title, medium, and rows.");
+    return;
+  }
+
+  var view = data.view;
+  if (view !== "shotgrid" && view !== "beatsheet") {
+    fail('view must be "shotgrid" or "beatsheet" (got ' + JSON.stringify(view) + ").");
+    return;
+  }
+
+  if (!Array.isArray(data.rows) || data.rows.length === 0) {
+    fail("rows must be a non-empty array of board rows.");
+    return;
+  }
+
+  var keys = REQUIRED[view];
+  for (var i = 0; i < data.rows.length; i++) {
+    var row = data.rows[i];
+    if (typeof row !== "object" || row === null || Array.isArray(row)) {
+      fail("row " + (i + 1) + " is not an object.");
+      return;
+    }
+    for (var k = 0; k < keys.length; k++) {
+      if (!(keys[k] in row)) {
+        fail("row " + (i + 1) + " is missing the \"" + keys[k] + "\" field.");
+        return;
+      }
+    }
+  }
+
+  document.getElementById("title").textContent =
+    typeof data.title === "string" && data.title ? data.title : "Storyboard";
+  if (typeof data.medium === "string" && data.medium) {
+    document.getElementById("medium").textContent = "Medium: " + data.medium;
+  }
+
+  var content = document.getElementById("content");
+
+  function cell(parent, text, className) {
+    var td = document.createElement("td");
+    if (className) { td.className = className; }
+    td.textContent = text === null || text === undefined ? "" : String(text);
+    parent.appendChild(td);
+    return td;
+  }
+
+  if (view === "shotgrid") {
+    var table = document.createElement("table");
+    var thead = document.createElement("thead");
+    var htr = document.createElement("tr");
+    ["Shot", "Scene", "Size", "Angle", "Movement", "Description", "Audio"]
+      .forEach(function (h) {
+        var th = document.createElement("th");
+        th.textContent = h;
+        htr.appendChild(th);
+      });
+    thead.appendChild(htr);
+    table.appendChild(thead);
+    var tbody = document.createElement("tbody");
+    data.rows.forEach(function (row) {
+      var tr = document.createElement("tr");
+      cell(tr, row.shot_no, "shot");
+      cell(tr, row.scene);
+      cell(tr, row.shot_size);
+      cell(tr, row.angle);
+      cell(tr, row.movement);
+      cell(tr, row.description);
+      cell(tr, row.audio_note);
+      tbody.appendChild(tr);
+    });
+    table.appendChild(tbody);
+    content.appendChild(table);
+  } else {
+    data.rows.forEach(function (row) {
+      var wrap = document.createElement("div");
+      wrap.className = "beat-row";
+      var num = document.createElement("div");
+      num.className = "beat-num";
+      num.textContent = String(row.beat);
+      var body = document.createElement("div");
+      body.className = "beat-body";
+      var name = document.createElement("p");
+      name.className = "beat-name";
+      name.textContent = String(row.name);
+      var intent = document.createElement("p");
+      intent.className = "beat-intent";
+      intent.textContent = String(row.intent);
+      body.appendChild(name);
+      body.appendChild(intent);
+      wrap.appendChild(num);
+      wrap.appendChild(body);
+      content.appendChild(wrap);
+    });
+  }
+})();
+</script>
+</body>
+</html>
