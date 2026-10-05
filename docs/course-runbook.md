@@ -77,15 +77,16 @@ Coach the sitting on the clock:
 The workflow adopts named newsroom practice. Key sources:
 
 - Poynter, "3 guidelines for a good story pitch":
-  poynter.org/educators-students/2016/3-guidelines-for-a-good-story-pitch/
+  www.poynter.org/educators-students/2016/3-guidelines-for-a-good-story-pitch
 - Poynter, "What makes a good pitch? NPR editors weigh in":
-  poynter.org/educators-students/2017/what-makes-a-good-pitch-npr-editors-weigh-in/
+  www.poynter.org/educators-students/2017/what-makes-a-good-pitch-npr-editors-weigh-in
 - The Open Notebook, "Why Now? Find a Hook to Make Your Pitch Timely":
   theopennotebook.com/2026/02/24/why-now-find-a-hook-to-make-your-pitch-timely/
 - Verification Handbook (EJC): verificationhandbook.com/
 - Mike Caulfield, "SIFT: The Four Moves":
   hapgood.us/2019/06/19/sift-the-four-moves/
-- First Draft, "Verifying online information":
+- First Draft (archived — the site is frozen, hosted by the Internet
+  Archive), "Verifying online information":
   firstdraftnews.org/long-form-article/verifying-online-information/
 - Princeton Library, triangulation:
   libguides.princeton.edu/medialiteracy/triangulation
