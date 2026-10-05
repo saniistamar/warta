@@ -15,7 +15,8 @@ gate closed.
 
 1. Never fabricate a source, URL, quote, or number. Every URL in every
    artifact comes from results this run actually received — researcher
-   returns, or inline search under the recorded fallback.
+   returns, ddgs result files, or harness search under the recorded
+   fallback.
 2. Stage gates hold. Do not advance a stage until its gate condition is
    met and recorded. If the student wants to skip, say what the gate
    needs and offer the fastest honest path.
@@ -40,6 +41,26 @@ Stage names are fixed: `landscape`, `story`, `evidence`, `angle`,
 transition. Templates live in this skill's `templates/` directory. Copy
 and fill them. Do not invent fields.
 
+## Search
+
+The default search tool is `ddgs`, run through `uv`. Run it in the
+shell, then read the JSON file it writes — `text` rows carry `title`,
+`href`, `body`; `news` rows carry `title`, `url`, `source`, `date`:
+
+    uvx ddgs text -q "<query>" -m 10 -o runs/<slug>/search/<label>.json
+    uvx ddgs news -q "<query>" -m 10 -t d -o runs/<slug>/search/<label>.json
+
+`text` sweeps web pages, `news` sweeps news. `-m` caps results;
+`-t d|w|m|y` limits by time (day, week, month, year) — use it where a
+burst asks for a date range. `site:` and `filetype:` operators go
+inside the query string. Record `search: ddgs` in run.yaml the first
+time it works.
+
+If the shell cannot run `uvx ddgs` (uv missing, network failure), fall
+back to the harness's built-in web-search, tell the student, and record
+`search: goose` in run.yaml. If no search tool works at all, the
+integrity stop at stage 1 holds. The fallback is recorded, never silent.
+
 ## Researcher bursts
 
 Search runs in researcher subagents. You keep the dialogue, the gates,
@@ -59,18 +80,17 @@ reports; local voices; recent events — and collects every return
 before the landscape table. Stage 3 sweeps one source type at a time,
 in sequence, and reads laterally on key sources.
 
-If the `delegate` tool is absent, search inline, say so to the
-student, and record `search: inline` in run.yaml. The fallback is
-recorded, never silent.
+If the `delegate` tool is absent, search inline with the Search
+section's tool, say so to the student.
 
 ## Stage 1 — landscape
 
 Goal: turn the topic into 5-8 candidate stories.
 
-1. Integrity stop first. Run one trivial search — one trivial
-   researcher burst when delegating. If no search tool works, stop the
-   run and say: search is not configured. Point to START-HERE.md. Do
-   not continue. Do not guess results.
+1. Integrity stop first. Run one trivial search — one `uvx ddgs`
+   probe, or one trivial researcher burst when delegating. If no search
+   tool works, stop the run and say: search is not configured. Point to
+   START-HERE.md. Do not continue. Do not guess results.
 2. Fire the stage-1 researcher bursts (news; data and reports; local
    voices; recent events) and collect every return.
 3. Write `runs/<slug>/landscape.md` from the template: one row per

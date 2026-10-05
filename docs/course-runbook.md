@@ -27,14 +27,17 @@ a story brief backed by a claim log. One sitting, about 2-3 hours.
 
 ## 3. Check search
 
-Goose ships a built-in `web-search` skill, enabled by default
-(DuckDuckGo). Verify before class: run Goose in the repo folder and
-ask it to search anything. A result list means search works.
+Warta's default search is `ddgs`, run through `uv`. Verify before
+class: in a terminal in the repo folder, run
+`uvx ddgs text -q "test" -m 3`. A JSON result file means the default
+search works.
 
 Warta fires its searches through researcher subagents. In the same
 probe, check the `delegate` tool answers (Summon extension, standard
-since Goose 1.25). When it is absent, Warta searches inline, tells the
-student, and records `search: inline` in run.yaml.
+since Goose 1.25). When it is absent, Warta searches inline and tells
+the student. Warta records the engine it used in run.yaml
+(`search: ddgs`, or `search: goose` when it fell back to Goose's
+built-in search).
 
 - To upgrade source quality, configure a search MCP: Tavily (needs
   `TAVILY_API_KEY`, quick-install deeplink in the docs) or Exa. Both are

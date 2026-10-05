@@ -10,6 +10,11 @@ This page installs Warta into Goose. You will paste one prompt.
 - git is installed. On macOS, run `xcode-select --install`. On Windows
   or Linux, use the installer from git-scm.com. If installing git is a
   blocker, use the no-git path in Troubleshooting below.
+- uv is installed — Warta's search runs through it. One terminal line:
+  macOS/Linux `curl -LsSf https://astral.sh/uv/install.sh | sh`, Windows
+  `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+  (from astral.sh/uv). Without uv, Warta falls back to Goose's built-in
+  search.
 - Make an empty folder for your Warta work — any name, anywhere you
   like. Warta, and every story you run with it, will live in this
   folder. Open it in Goose: File → Open Directory…, then start a new

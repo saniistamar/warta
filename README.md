@@ -23,6 +23,8 @@ v0.1.
 
 - Goose Desktop.
 - git (or the no-git ZIP path in [INSTALL.md](./INSTALL.md)).
+- uv — Warta's default search runs through it (astral.sh/uv). Goose's
+  built-in search is the fallback.
 - Optional: better search via a Tavily or Exa MCP — see the MCP guides
   on goose-docs.ai.
 
@@ -49,8 +51,11 @@ MIT — see [LICENSE](./LICENSE).
 
 - Warta stops at stage 1 and says search is not configured: search
   isn't set up. Warta refuses to invent sources — that's a feature.
-  Set up search — a Tavily or Exa MCP, see the MCP guides on
-  goose-docs.ai — then say "resume warta".
+  Check that uv is installed and `uvx ddgs text -q "test" -m 3` returns
+  results. If uv is the problem, install it (astral.sh/uv). Goose's
+  built-in search is the fallback — for better source quality set up a
+  Tavily or Exa MCP, see the MCP guides on goose-docs.ai — then say
+  "resume warta".
 - Session died: reopen Goose in the same folder and say "resume warta".
 - No git on the machine: on the repo page choose Code → Download ZIP,
   unzip it, open the folder it creates in Goose, and say "run warta".
