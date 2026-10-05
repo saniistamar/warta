@@ -1,6 +1,6 @@
 # Glossary
 
-> One home for warta's vocabulary: terms and aliases.
+> One home for Warta's vocabulary: terms and aliases.
 
 ## 1. Terms
 
@@ -11,11 +11,11 @@
 | peg | news peg | The one-sentence "why now" that makes a story worth covering at this moment. Stage 2 records it verbatim from the student. |
 | claim log | | The stage 3 artifact: one row per checkable claim, with id, best source, status, and the student's disposition on flagged rows. |
 | angle | | The lens a story is reported through. Stage 4 offers labelled options; the student picks one and names the audience. |
-| integrity stop | | The planned stop at stage 1 when no search tool answers: warta halts rather than invent sources. Fix search, then say "resume warta". |
+| integrity stop | | The planned stop at stage 1 when no search tool answers: Warta halts rather than invent sources. Fix search, then say "resume warta". |
 
 ## 2. Inbound pointers
 
-| You might say | warta calls it |
+| You might say | Warta calls it |
 | --- | --- |
 | "your story in one page" | story brief — `runs/<slug>/brief.md`, stage 5's deliverable |
 | "the shortlist of stories" | landscape — `runs/<slug>/landscape.md`, the stage 1 survey |

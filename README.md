@@ -1,6 +1,6 @@
-# warta
+# Warta
 
-warta is a guided editorial workflow for a news story, run in the Goose
+Warta is a guided editorial workflow for a news story, run in the Goose
 desktop app. You bring a topic. It walks you through five stages —
 landscape, story pick, evidence, angle pick, materialization. You make
 every decision that matters. You finish with a story brief a writer can
@@ -27,17 +27,17 @@ v0.1.
 
 ## Docs
 
-- [START-HERE.md](./START-HERE.md) — what a warta sitting is and what
+- [START-HERE.md](./START-HERE.md) — what a Warta sitting is and what
   you decide.
-- [INSTALL.md](./INSTALL.md) — the paste-prompt that sets warta up in
+- [INSTALL.md](./INSTALL.md) — the paste-prompt that sets Warta up in
   Goose.
 - [Course runbook](./docs/course-runbook.md) — for instructors:
   provisioning, distribution, and coaching a sitting.
-- [Glossary](./docs/glossary.md) — warta's vocabulary.
+- [Glossary](./docs/glossary.md) — Warta's vocabulary.
 
 ## Resuming
 
-Reopen Goose in the warta folder and say "resume warta". It picks up
+Reopen Goose in the `warta` folder and say "resume warta". It picks up
 where you stopped.
 
 ## License
@@ -46,8 +46,8 @@ MIT — see [LICENSE](./LICENSE).
 
 ## Troubleshooting
 
-- warta stops at stage 1 and says search is not configured: search
-  isn't set up. warta refuses to invent sources — that's a feature.
+- Warta stops at stage 1 and says search is not configured: search
+  isn't set up. Warta refuses to invent sources — that's a feature.
   Set up search — a Tavily or Exa MCP, see the MCP guides on
   goose-docs.ai — then say "resume warta".
 - Session died: reopen Goose in the same folder and say "resume warta".

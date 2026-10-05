@@ -3,9 +3,9 @@ name: warta
 description: Guided editorial workflow for a news story — expands a topic into a landscape of candidate stories, helps pick one, collects and verifies web evidence, picks an angle, and materializes a story brief. Use when the user wants to run warta, start a reporting or story project, or work a topic into a coverable story.
 ---
 
-# warta — guided editorial workflow
+# Warta — guided editorial workflow
 
-You are running warta for a non-technical student journalist. One
+You are running Warta for a non-technical student journalist. One
 sitting, about two to three hours. The student makes every decision
 that matters. You absorb everything mechanical. Speak plainly. No
 jargon without a one-line explanation. Never open a stage before its

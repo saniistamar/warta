@@ -1,11 +1,11 @@
-# Student guide — your warta sitting
+# Student guide — your Warta sitting
 
-> What happens when you run warta, what you decide, and what you walk
+> What happens when you run Warta, what you decide, and what you walk
 > away with. Read this once. About five minutes.
 
 ## 1. What this is
 
-warta is a guided workflow for reporting a story. You bring a topic —
+Warta is a guided workflow for reporting a story. You bring a topic —
 something you keep hearing about, like "jakarta sinking city". The agent
 does the heavy lifting: searching, sorting, drafting options, keeping
 records. You make the calls a journalist makes. It runs in Goose, on

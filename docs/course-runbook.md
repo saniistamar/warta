@@ -1,11 +1,11 @@
-# Course runbook — running warta in a class
+# Course runbook — running Warta in a class
 
-> How an instructor provisions, distributes, and coaches warta for one
+> How an instructor provisions, distributes, and coaches Warta for one
 > course sitting. Follow it top to bottom before the first class.
 
 ## 1. What you are running
 
-warta is a guided editorial workflow that runs inside the Goose desktop
+Warta is a guided editorial workflow that runs inside the Goose desktop
 harness. Students give it a topic. It walks them through five stages —
 landscape, story pick, evidence, angle pick, materialization — and leaves
 a story brief backed by a claim log. One sitting, about 2-3 hours.
@@ -31,15 +31,15 @@ Goose ships a built-in `web-search` skill, enabled by default
 (DuckDuckGo). Verify before class: run Goose in the repo folder and
 ask it to search anything. A result list means search works.
 
-warta fires its searches through researcher subagents. In the same
+Warta fires its searches through researcher subagents. In the same
 probe, check the `delegate` tool answers (Summon extension, standard
-since Goose 1.25). When it is absent, warta searches inline, tells the
+since Goose 1.25). When it is absent, Warta searches inline, tells the
 student, and records `search: inline` in run.yaml.
 
 - To upgrade source quality, configure a search MCP: Tavily (needs
   `TAVILY_API_KEY`, quick-install deeplink in the docs) or Exa. Both are
   documented on goose-docs.ai under MCP guides.
-- Without a working search tool, warta stops at stage 1 on purpose. It
+- Without a working search tool, Warta stops at stage 1 on purpose. It
   never invents sources. Treat that stop as a provisioning signal, not a
   failure.
 

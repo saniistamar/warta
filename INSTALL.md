@@ -1,6 +1,6 @@
-# Install warta
+# Install Warta
 
-This page installs warta into Goose. You will paste one prompt.
+This page installs Warta into Goose. You will paste one prompt.
 
 ## Before you start
 
@@ -16,7 +16,7 @@ This page installs warta into Goose. You will paste one prompt.
 Open a new Goose session. Copy this prompt, paste it in, and send it:
 
 ```
-Install warta for me: clone the repository
+Install Warta for me: clone the repository
 https://github.com/saniistamar/warta.git into the folder ~/warta
 (create it if needed). If ~/warta already exists from an earlier
 attempt, use it as it is — do not clone again. After cloning, check
@@ -34,12 +34,12 @@ away.
 
 ## Troubleshooting
 
-- The search check happens at stage 1. If warta stops and says search
+- The search check happens at stage 1. If Warta stops and says search
   is not configured, that's the integrity stop — see the README.
 - Closed Goose mid-run: reopen it in the same folder and say
   "resume warta".
 - Pasted the prompt twice, or `~/warta` already exists: tell Goose
-  "warta is already cloned at ~/warta, continue from there".
+  "Warta is already cloned at ~/warta, continue from there".
 - No git on this machine: on the repo page
   (github.com/saniistamar/warta) choose Code → Download ZIP, unzip it,
   open the folder in Goose, and say "run warta".
