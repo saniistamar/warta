@@ -15,8 +15,9 @@ v0.1.
 1. Install Goose Desktop — free, from goose-docs.ai. Search needs no
    API key; Goose asks you to sign in to an AI provider on first
    launch — pick the free sign-in option or paste an API key.
-2. Paste the prompt from [INSTALL.md](./INSTALL.md).
-3. Say "run warta".
+2. Make an empty folder and open it in Goose.
+3. Paste the prompt from [INSTALL.md](./INSTALL.md).
+4. Say "run warta".
 
 ## Requirements
 
@@ -37,8 +38,8 @@ v0.1.
 
 ## Resuming
 
-Reopen Goose in the `warta` folder and say "resume warta". It picks up
-where you stopped.
+Reopen Goose in the folder where you ran Warta and say "resume
+warta". It picks up where you stopped.
 
 ## License
 
@@ -52,7 +53,7 @@ MIT — see [LICENSE](./LICENSE).
   goose-docs.ai — then say "resume warta".
 - Session died: reopen Goose in the same folder and say "resume warta".
 - No git on the machine: on the repo page choose Code → Download ZIP,
-  unzip, open the folder in Goose, and say "run warta".
+  unzip it, open the folder it creates in Goose, and say "run warta".
 - Storyboard page seems blank or won't open: `storyboard.html`
   renders offline in any browser; if it shows an error, the board was
   not filled — say "resume warta".

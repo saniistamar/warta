@@ -46,12 +46,14 @@ student, and records `search: inline` in run.yaml.
 ## 4. Distribute
 
 Students install from the public repository. Send them the repo's
-INSTALL.md (or its URL). It contains a prompt they paste into Goose;
-Goose clones the repository, then they open the folder and say
-"run warta".
+INSTALL.md (or its URL). Each student makes an empty folder, opens it
+in Goose, and pastes the prompt from that page. Goose clones the
+repository into that folder and the same session is ready — they say
+"run warta" without leaving it.
 
 For machines without git: on the repository page choose Code →
-Download ZIP, unzip it, open the folder in Goose, and say "run warta".
+Download ZIP, unzip it, open the folder it creates in Goose, and say
+"run warta".
 
 ## 5. Run the session
 
