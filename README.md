@@ -25,6 +25,8 @@ v0.1.
 - git (or the no-git ZIP path in [INSTALL.md](./INSTALL.md)).
 - uv — Warta's default search runs through it (astral.sh/uv). Goose's
   built-in search is the fallback.
+- Optional: Node.js — renders the pitch-deck page (the deck markdown
+  is written either way).
 - Optional: better search via a Tavily or Exa MCP — see the MCP guides
   on goose-docs.ai.
 
@@ -62,3 +64,6 @@ MIT — see [LICENSE](./LICENSE).
 - Storyboard page seems blank or won't open: `storyboard.html`
   renders offline in any browser; if it shows an error, the board was
   not filled — say "resume warta".
+- No deck.html at the end: rendering the deck needs Node. Install it
+  (nodejs.org), then in the story folder run
+  `npx -y @marp-team/marp-cli runs/<slug>/deck.md -o runs/<slug>/deck.html`.

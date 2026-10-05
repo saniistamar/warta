@@ -10,7 +10,9 @@ harness. Students give it a topic. It walks them through five stages —
 landscape, story pick, evidence, angle pick, materialization — and leaves
 a story brief backed by a claim log. One sitting, about 2-3 hours.
 
-- **The skill carries the method:** `.goose/skills/warta/SKILL.md`.
+- **The skill carries the method:** `.goose/skills/warta/` —
+  `SKILL.md` is the spine; `stages/` and `search.md` hold each stage's
+  detail.
 - **The recipe is for CLI users:** `.goose/recipes/warta.yaml` — the
   Goose CLI loads it automatically; the Desktop app runs the skill
   directly.
@@ -24,6 +26,11 @@ a story brief backed by a claim log. One sitting, about 2-3 hours.
   use a display, or use the CLI.
 - Docs live at goose-docs.ai. The source repository is
   github.com/aaif-goose/goose.
+- Provision before class when you can: uv (astral.sh/uv — the default
+  search) and, optionally, Node.js (nodejs.org — the pitch-deck
+  page). Warta preflights both at session start and offers default
+  installs with the student's confirmation; provisioning just skips
+  that step.
 
 ## 3. Check search
 

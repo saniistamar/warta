@@ -15,10 +15,15 @@ This page installs Warta into Goose. You will paste one prompt.
   `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
   (from astral.sh/uv). Without uv, Warta falls back to Goose's built-in
   search.
+- Optional: Node.js (nodejs.org) — it renders the pitch-deck page at
+  the end. Without it you still get deck.md, the deck as markdown.
 - Make an empty folder for your Warta work — any name, anywhere you
   like. Warta, and every story you run with it, will live in this
   folder. Open it in Goose: File → Open Directory…, then start a new
   session there.
+
+Warta checks for uv and Node when a run starts and offers to install
+whatever is missing — nothing installs without your confirmation.
 
 ## The prompt
 

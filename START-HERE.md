@@ -38,6 +38,9 @@ A folder under `runs/<your-story>/` holding:
 - **The storyboard page** — your board as a picture: open
   `storyboard.html` in any browser. It renders straight from the
   board, so it always matches it.
+- **The pitch deck** — your brief as slides: open `deck.html` in any
+  browser. It renders from the brief's deck file, so it says only what
+  the brief says.
 
 A writer — or a drafting agent — can pick the brief up cold and start
 work. That is the test of the format.
